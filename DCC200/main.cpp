@@ -1,62 +1,101 @@
 #include <iostream>
 using namespace std;
-//Ponteiros e alocdin
-//ex: int(tipo do elemento apontado) *(operador de indirecao) ptr(nome do ponteiro)
-//declaracao: int * ptr = &ch; - ponteiro ptr recebe o end. de memoria de ch
-//o ponteiro aponta para um endereco de memoria
 /*
-int main(){
-    int total=6;//declara uma variavel
-    int * ptr;//declara um ponteiro
-    ptr = &total; //atribui o end de total a ptr
-    cout<< total<<endl; //Imprime o conteudo de total
-    cout<<*ptr<<endl; //Imprime conteudo do end de memoria apontado por ptr
-    cout<< ptr<<endl; //Imprime o conteudo de ptr(neste caso, o end de memoria)
-
-    *ptr = *ptr+1; //altera o valor do conteudo, no caso 6+1 = 7
-    cout<< total;
-    return 0;
+int fat(int n){
+    if(n<=0) return 1;
+    else return n*fat(n-1);
 }*/
-
-//Ponteiro de Ponteiro(ponteiros multiplos)
-//o ponteiro **ptr aponta para o conteudo apontado por um *ptr
-//ou seja: **ptr->*ptr2->x
 /*
+void imprimeIntervalo(int a, int b, int inc){
+    if(a>b) return;
+    cout<< a << " ";
+    imprimeIntervalo(a+inc, b, inc);
+
+}
+void imprimeDecrescente(int n){
+    if(n==0) return;
+    cout<< n<< " ";
+    imprimeDecrescente(n-1);
+}*/
+/*
+bool ehPrimoAux(int n, int i){
+    if(n<=2) return(n==2);
+    if(n%i == 0) return false;
+    if(i*i > n) return true;
+    return ehPrimoAux(n,i+1);
+}
+bool ehPrimo(int n){
+    if(n<2) return false;
+    return ehPrimoAux(n, 2);
+}*/
+void ponteiros(){
+    /*int *pt; //1a
+    cout<< &pt<<endl;; //1b
+    int x; //1c
+    cin>>x; //1d
+    pt = &x; //1e
+    *pt = *pt*10; //1f
+    cout << *pt<<endl;//1g
+    *pt = *pt+10;//1h
+    cout<< *pt;//1i*/
+    //2
+
+}
+
+void troca(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 int main(){
-    int x, *p, **q;
-    x=5;
-    p=&x;//aponta para o end de x
-    q=&p;//aponta para o endereco de p
-    cout<< **q<<endl;//imprime o conteudo de X: q aponta para p e p aponta para x(**q->*p->x)
-    **q+=1;
-    cout<<x<<endl;
+
+    //cout<<fat(5);
+    //imprimeIntervalo(1,30, 3);
+    //imprimeDecrescente(30);
+    /* for(int i=1; i<=20; i++){
+        cout<<i<<(ehPrimo(i)? " eh Primo":" nao eh Primo")<<endl;
+           }*/
+ /* int a=10, b=20, c=30, v[3], *pti, *pti1, *pti2;
+    pti1 = &a;
+    pti2 = &b;
+    *pti1 = c;
+    *pti2 = c;
+    pti = v;
+    for(int i=0; i<3; i++){
+        v[i] = 0;
+    }
+    for(int i=0; i<3;i++){
+
+        (*pti)++;
+        pti++;
+    }
+    for(int i=0; i<3; i++){
+            cout<<"vetor na posicao "<< i<<": ";
+            cout<< v[i]<< " "<<endl;
+    }
+    *pti1 = v[0]+99;
+    v[0] = (*pti1)+(*pti2);
+    cout<< "a: "<<a<< ", b: "<< b <<",c: "<<c<<" "<< endl;
+    cout<< v[0];
+    (*pti2)++;
+    cout<< "a: "<<a<< ", b: "<< b <<",c: "<<c<<" "<< endl;
+    ponteiros();*/
+
+ /* int x=23;
+    float y=9.7;
+    int *pt1;
+    pt1=&x;
+    float *pt2;
+    pt2=&y;
+    cout<<(pt1+16)<< " "<< endl;
+    float *pt3;
+    pt3 = pt2;
+    pt3++;
+    cout<< "end de pt3: "<<&pt3<< " end de pt2: "<< pt3<< endl;
+    */
+    int x=10, y=20;
+    troca(&x, &y);
+    cout << "x = " << x << ", y = " << y << endl;
     return 0;
 }
-*/
-
-//Alocacao Dinamica
-//se aloca dinamincamente com o operador new
-//declaracao: int *pi(ptr compat com o tipo de dado nece)= new(operador) int(tipo de dado)
-/*
-int main(){
-    int * pi = new int;
-    *pi = 1001;
-    cout<<*pi<<endl; // valor armazenado no end de memoria apontado por pi
-    cout<< pi<<endl; //end de memoria apontado por pi
-
-    double *pd = new double;
-    *pd =500.35;
-    cout<<*pd<<endl; //valor armazenado no end de memoria apontado  por pd
-    cout<<pd<<endl<<endl; // end de memoria apontado por pd
-
-    return 0;
-}*/
-
-//Recursividade
-//sintaxe:
-// void recursao(){
-//         recursao();}
-//
-//int main(){
-//      recursao();}
-//Funcao vai se chamar ate que uma condicao especifica seja satisfeita
