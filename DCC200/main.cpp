@@ -4,7 +4,7 @@ using namespace std;
 int fat(int n){
     if(n<=0) return 1;
     else return n*fat(n-1);
-}*/
+}
 /*
 void imprimeIntervalo(int a, int b, int inc){
     if(a>b) return;
@@ -41,13 +41,13 @@ void ponteiros(){
     //2
 
 }
-
+/*
 void troca(int *a, int *b){
     int temp = *a;
     *a = *b;
     *b = temp;
-}
-
+}*/
+/*
 int main(){
 
     //cout<<fat(5);
@@ -55,7 +55,7 @@ int main(){
     //imprimeDecrescente(30);
     /* for(int i=1; i<=20; i++){
         cout<<i<<(ehPrimo(i)? " eh Primo":" nao eh Primo")<<endl;
-           }*/
+           }
  /* int a=10, b=20, c=30, v[3], *pti, *pti1, *pti2;
     pti1 = &a;
     pti2 = &b;
@@ -80,7 +80,7 @@ int main(){
     cout<< v[0];
     (*pti2)++;
     cout<< "a: "<<a<< ", b: "<< b <<",c: "<<c<<" "<< endl;
-    ponteiros();*/
+    ponteiros();
 
  /* int x=23;
     float y=9.7;
@@ -93,9 +93,40 @@ int main(){
     pt3 = pt2;
     pt3++;
     cout<< "end de pt3: "<<&pt3<< " end de pt2: "<< pt3<< endl;
-    */
+
     int x=10, y=20;
     troca(&x, &y);
     cout << "x = " << x << ", y = " << y << endl;
+    return 0;
+}
+*/
+
+
+//AlocDin
+
+float prodEscalar(int x, float *vet1[], float *vet2[]){
+    float *prodEsc = new float[x];
+    for(int i=0;i<x;i++){
+        prodEsc[i] = (*vet1[i])*(*vet2[i]);
+    }
+    return *prodEsc;
+}
+
+int main(){
+   /* int x;
+    cin>>x;
+    int *vet = new int [x];
+    for(int i=0; i<x;i++){
+        cin >> vet[i];
+    }
+    int media = 0;
+    for(int i=0;i<x;i++) media+=vet[i];
+    media = media/x;
+    cout<< media;
+    delete [] vet;*/
+    int x;
+    cin>>x;
+    float *vet1 = new float [x];
+    float *vet2 = new float [x];
     return 0;
 }
